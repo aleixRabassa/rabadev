@@ -1,0 +1,102 @@
+:root {
+  --paper: #ffffff;
+  --ink: #1e2329;
+  --muted: #5e6670;
+  --rule: #e4e7eb;
+  --accent: #23675a;
+  --summary: #eef5f3;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15191e;
+    --ink: #e6e9ed;
+    --muted: #9aa3ad;
+    --rule: #2a3038;
+    --accent: #6cc3ad;
+    --summary: #1b2a28;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Literata", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+header.site .name {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+header.site nav { display: flex; gap: 1.25rem; font-size: 0.95rem; }
+
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+nav a[aria-current="page"] { color: var(--ink); text-decoration: none; font-weight: 600; }
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.effective { color: var(--muted); font-size: 0.95rem; margin: 0 0 2rem; }
+
+.summary {
+  background: var(--summary);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 0 0 2.5rem;
+}
+.summary p { margin: 0; }
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 2.25rem 0 0.5rem;
+}
+
+p, ul { margin: 0 0 1rem; }
+ul { padding-left: 1.25rem; }
+li { margin-bottom: 0.4rem; }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
